@@ -9,4 +9,5 @@ I made these shaders for using VRChat.
 A hologram-like shader.
 It has noise, frensel, line-scroll visual effects.
 
-- test
+- Main Texture
+it
