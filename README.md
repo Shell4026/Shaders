@@ -10,4 +10,4 @@ A hologram-like shader.
 It has noise, frensel, line-scroll visual effects.
 
 - Main Texture
-it
+  it
