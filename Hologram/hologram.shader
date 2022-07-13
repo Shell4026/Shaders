@@ -4,14 +4,14 @@
     {
 		[MainTexture]_Texture("Main Texture", 2D) = "black" {}
 		_Texture2("Hologram Texture", 2D) = "black" {}
-		[HDR]_Color("Color", Color) = (1.0, 1.0, 1.0, 1.0)
+		[HDR]_Color("Color", Color) = (0.53, 0.9, 1.0, 1.0)
 		_Power("Outline Power", float) = 0.5
-		_Speed("Scroll Speed", Range(0.0, 2.0)) = 1.0
-		_Line("Line", float) = 25.0
-		_Alpha("Alpha", Range(0.0, 10.0)) = 1.0
-		_RandomSpeed("_RandomSpeed", Range(0.0, 5.0)) = 1
-		_RandomRange("RandomRange", float) = 0.05
-		_RandomHeight("RandomHeight", float) = 10
+		_Speed("Scroll Speed", Range(0.0, 2.0)) = 0.25
+		_Line("Line", float) = 1.5
+		_Alpha("Alpha", Range(0.0, 10.0)) = 0.5
+		_RandomSpeed("RandomSpeed", Range(0.0, 5.0)) = 0.5
+		_RandomRange("RandomRange", float) = 0.1
+		_RandomHeight("RandomHeight", float) = 0.01
 		_Height("Height", float) = 100.0
     }
     SubShader
@@ -67,7 +67,7 @@
 				float seed = floor(_Time.y * _RandomSpeed)%_RandomSpeed * v.vertex.y * 5;
 				float ran2 = step(0.9, random(seed));
 				float is_flick = step(0.9 + 0.1 - _RandomSpeed * 0.1, random(_Time.y));
-				float randir = random(_Time.y * floor(v.vertex.y * _RandomHeight)%_RandomHeight); 
+				float randir = random(_Time.y * floor(v.vertex.y / _RandomHeight)); 
 				
 				v.vertex.x += is_flick * randir * _RandomRange;
 				
@@ -160,7 +160,7 @@
 				float seed = floor(_Time.y * _RandomSpeed)%_RandomSpeed * v.vertex.y * 5;
 				float ran2 = step(0.9, random(seed));
 				float is_flick = step(0.9 + 0.1 - _RandomSpeed * 0.1, random(_Time.y));
-				float randir = random(_Time.y * floor(v.vertex.y * _RandomHeight)%_RandomHeight); 
+				float randir = random(_Time.y * floor(v.vertex.y / _RandomHeight)); 
 				
 				v.vertex.x += is_flick * randir * _RandomRange;
 				
