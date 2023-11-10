@@ -1,7 +1,7 @@
 # Description
 Various Shader Collection
 
-I made these shaders for using VRChat.
+I made these shaders for using Unity.
 
 ## Shader type
 
